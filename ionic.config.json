@@ -1,0 +1,7 @@
+{
+  "name": "CoronaApp-SESPE",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
