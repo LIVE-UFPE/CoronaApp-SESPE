@@ -1,12 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="app">
+    <v-content>
+      <!-- // TODO responsividade! -->
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
+
+<!-- 
+// ! Rules of thumb!
+// * Components serao feitos apenas se for necessaria a replicabilidade
+// * (exemplo, um item de uma lista de itens)
+
+// * Páginas únicas e pouco mutáveis não precisam ser completamente separadas
+// * em componentes
+
+// ! Criando todos os componentes a 1920x1080
+// ! Sem foco na responsividade, pois a prioridade é estar integrado ao back-end
+
+// TODO App.vue ter um AppBar global, que se esconde quando necessário???
+-->
 
 <style>
 #app {
@@ -28,5 +41,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.round-border {
+  border-radius: 5% !important;
 }
 </style>

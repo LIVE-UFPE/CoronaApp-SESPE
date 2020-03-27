@@ -1,14 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
+//* Views importadas
+import Login from './views/Login.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  { // * initial redirect
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/login'
   },
   {
     path: '/about',
@@ -16,7 +22,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    // * outra forma de importar componentes sem precisar desse
+    component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
   }
 ]
 
